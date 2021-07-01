@@ -317,17 +317,18 @@ body{
 .flex-aside{
     align-self: center;
     margin: 0 30px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#aside-odd{
     grid-column: 1/2;
     grid-row: 2/3;
 }
-#aside-even{
+.aside-visible{
+    display: flex;
+}
+
+.even{
     grid-column: 3/4;
     grid-row: 2/3;
 }

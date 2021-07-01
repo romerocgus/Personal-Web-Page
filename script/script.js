@@ -3,6 +3,8 @@ let skillText = document.querySelector(".skills__text");
 let softText = document.querySelector(".softskills__text");
 let skills = document.querySelectorAll(".flex-skillitem");
 let softSkills = document.querySelectorAll(".flex-softskills-item");
+let projects = document.querySelectorAll(".grid-projects__item");
+let aside = document.querySelector(".flex-aside");
 
 let skillTextAsign = ()=>{
     for (i = 0; i< skills.length; i++){
@@ -62,5 +64,45 @@ let softSkillTextAsign = ()=>{
     };
 };
 
+let asideMaker = ()=> {
+    for (i=0; i<projects.length; i++){
+        let text;
+        if(i == 0){
+            text= `<h3 class="card__title">Proyecto 1</h3>
+			<p class="card__text">Texto del proyecto 1</p>`;
+            projects[i].addEventListener("click", ()=>{
+                console.log(i);
+                aside.classList.add("aside-visible");
+                aside.classList.remove("even");
+                aside.innerHTML = text;
+            });
+        } else if(i == 1) {
+            text= `<h3 class="card__title">Proyecto 2</h3>
+			<p class="card__text">Texto del proyecto 2</p>`;
+            projects[i].addEventListener("click", ()=>{
+                aside.classList.add("aside-visible", "even");
+                aside.innerHTML = text;
+            });
+        } else if(i == 2){
+            text= `<h3 class="card__title">Proyecto 3</h3>
+			<p class="card__text">Texto del proyecto 3</p>`;
+            projects[i].addEventListener("click", ()=>{
+                console.log(i);
+                aside.classList.add("aside-visible");
+                aside.classList.remove("even");
+                aside.innerHTML = text;
+            });
+        } else if(i == 3) {
+            text= `<h3 class="card__title">Proyecto 4</h3>
+			<p class="card__text">Texto del proyecto 4</p>`;
+            projects[i].addEventListener("click", ()=>{
+                aside.classList.add("aside-visible", "even");
+                aside.innerHTML = text;
+            });
+        };
+    }
+}
+
 skillTextAsign();
 softSkillTextAsign();
+asideMaker();
