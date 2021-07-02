@@ -13,9 +13,7 @@ body{
     font-family: 'Saira Condensed', sans-serif;
     color: var(--textColor);
     letter-spacing: 1.5px;
-    background: linear-gradient(to bottom right,rgb(172, 207, 255)5%, rgb(243, 248, 253) 25%);
-    background-attachment: fixed;
-    
+    background: white;    
 }
 .contact-link {
     color: #38f;
@@ -24,7 +22,6 @@ body{
     color: white;
 }
 .subtitle{
-    margin: 30px 0px;
     position:relative;
     font-size: 6rem;
     grid-column: 1/5;
@@ -34,24 +31,21 @@ body{
     content: "";
     width: 75%;
     background-color: black;
-    height: 0.8rem;
+    height: 0.7rem;
     border-radius: 2px;
 }
-/* .subtitle::after{
-    top: calc(100% - 0.8rem);
-    left: 35%;
-} */
+
 .card{
     background-color: white;
-    margin-top: 50px;
-    padding: 10px;
+    margin-top: 4rem;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 10px 10px 20px rgba(144, 144, 145, 0.336);
 }
 .card__title{
     position: relative;
     margin: 30px 0px;
-    font-size: 2em;
+    font-size: 2rem;
 }
 .card__title::after{
     position: absolute;
@@ -61,7 +55,7 @@ body{
     width: 75%;
     background-color: black;
     height: 0.3rem;
-    border-radius: 2px;
+    border-radius: 1px;
 }
 /* Header START*/
 .header{
@@ -77,18 +71,18 @@ body{
     background-position: bottom;
 }
 .header__title{
-    font-size: 4em;
+    font-size: 4rem;
     min-width: 250px;
     letter-spacing: 6px;
 }
 .header__firstlane{
-    font-size: 2em;
+    font-size: 2rem;
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
 .header__text{
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     max-width: 50%;
     letter-spacing: .5px;
     text-align: center;
@@ -121,7 +115,7 @@ body{
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 .navbar__item:hover{
     background-color: rgba(223, 226, 255, 0.562);
@@ -134,11 +128,11 @@ body{
 /* ABOUT MAIN START */
 
 .grid-about{
+    background-color:antiquewhite;
     display: grid;  
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, min-content);
-    margin: 200px 0;
-    padding: 0 10%;
+    padding: 150px 10%;
     justify-content: center;
     align-content: center;
     justify-items: center;
@@ -159,12 +153,11 @@ body{
     clip-path: polygon(43% 0, 100% 0, 100% 100%, 0 100%, 0 46%, 31% 0, 0 31%, 20% 0, 0 16%, 13% 0, 5% 6%, 18% 19%);
 }
 .grid-about__title{
-    margin: 0px;
-    font-size: 2em;
+    font-size: 2rem;
 }
 .grid-about__text{
     color: var(--subtextColor);
-    font-size: 20px;
+    font-size: 1.3rem;
     margin: 10px;
 }
 .colors:hover{
@@ -182,7 +175,7 @@ body{
     display: grid;
     width: min-content;
     grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(5, 100px);
+    grid-template-rows: repeat(5, minmax(100px, min-content));
     align-items: center;
     justify-items: center;
     gap: 15px;
@@ -214,15 +207,21 @@ body{
 }
 .skills__text {
     grid-column: 1/span 3;
+    padding: 10px;
+}
+.skills__text::first-line{
+    font-weight: 900;
 }
 /* Skills END */
 /* Skills Animations */
 .flex-skillitem:hover p{
     transform: rotate(-360deg);
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 .flex-skillitem:hover img{
     transform: rotate(360deg) scale(0%);
+    cursor: pointer;
 }
 /* Skills Animations END */
 /* Soft Start */
@@ -253,7 +252,6 @@ body{
     position: relative;
     color: rgb(89, 88, 102);
     font-size: 50px;
-    width: 65px;
     transition: transform ease-in-out 1s;
 }
 .flex-softskills-item__title{
@@ -270,7 +268,7 @@ body{
 /* Soft Skills Animations */
 .flex-softskills-item:hover p{
     transform: rotate(360deg);
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 .flex-softskills-item:hover i{
     transform: rotate(-360deg) scale(0%);
@@ -281,8 +279,9 @@ body{
 
 /* PROJECTS START */
 .grid-section-project{
+    background-color: lightsteelblue;
+    padding: 150px 0px;
     display: grid;
-    margin: 200px 0;
     grid-template-columns: 25% 50% 25%;
     grid-template-rows: min-content 1fr;
     justify-content: center;
@@ -336,8 +335,9 @@ body{
 
 /* CONTACT FORM START */
 .grid-section-contact{
+    background-color: tan;
+    padding: 150px 0px;
     display: grid;
-    margin: 200px 0;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, min-content);
     justify-items: center;
@@ -373,7 +373,7 @@ body{
     font-family: inherit;
     font-weight: 900;
     letter-spacing: 2px;
-    font-size: 1em;
+    font-size: 1rem;
     border: none;
     align-self: flex-end;
 }

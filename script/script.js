@@ -10,23 +10,23 @@ let skillTextAsign = ()=>{
     for (i = 0; i< skills.length; i++){
         let newText = "";
         if(i == 0){
-            newText = "el texto de html";
+            newText = `HTML:<br>I'm confident in the use of Html to structure the document with good semantics in order to boost your SEO.`;
         }else if(i == 1){
-            newText = "el texto de css";
+            newText = `CSS:<br>I like to keep up with every fuctionality that Css brings. I work with Grid, Flexbox, animations, pseudo-elements and more to make your wishes come true!`;
         }else if(i == 2){
-            newText = "el texto de js";
+            newText = `Javascript:<br>I love programming and find creative solutions. I'm confident in the use of Javascript Vanilla, and also have experience using some frameworks too.`;
         }else if(i == 3){
-            newText = "el texto de git";
+            newText = `GIT:<br>I use Git as version control sistem for my projects.<br>`;
         }else if(i == 4){
-            newText = "el texto de responsive";
+            newText = `Responsive Design:<br>All my Apps can adapt to any device you've got!`;
         }else if(i == 5){
-            newText = "el texto de vsCode";
+            newText = `Visual Studio Code:<br>This is my editor of choice. I'm pretty used to it, and love working with.`;
         }else if(i == 6){
-            newText = "el texto de bootstrap";
+            newText = `Bootstrap:<br>I rather work with pure CSS, but i have experiencie using bootstrap and feel confident with it too.`;
         }else if(i == 7){
-            newText = "el texto de photoshop";
+            newText = `Photoshop:<br>I use it as a tool to boost up my images and make the things even more beatiful.`;
         }else if(i == 8){
-            newText = "el texto de illustrator";
+            newText = `Illustrator:<br>I have some experience with it, making my own designs when needed.`;
         };
 
         skills[i].addEventListener("click", ()=>{
