@@ -171,110 +171,72 @@ body{
 /* Bio End */
 
 /* Skills start */
-.grid-about__skills{
-    display: grid;
-    width: min-content;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(5, minmax(100px, min-content));
-    align-items: center;
-    justify-items: center;
-    gap: 15px;
-    grid-auto-flow: row;
+.flex-about__skills, .flex-about__skillSoft{
     grid-column: span 2;
     grid-row: 4/ span 5;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.skills__title{
-    grid-column: 1/4;
+
+.skills-container{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    gap: 15px;
+    grid-auto-flow: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
 }
-.flex-skillitem{
+.flex-skillitem, .flex-softSkillitem{
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.flex-skillitem__img, .flex-skillitem__icon {
+    position: relative;
+    width: 65px;
+    transition: transform ease-in-out 1s;
 }
 .flex-skillitem__p{
     position: absolute;
     color: black;
     font-size: 0px;
-    margin-bottom: 0px;
     transition: transform ease-in-out 1s, font-size ease-in-out 1s;
 }
-.flex-skillitem__img {
-    position: relative;
-    width: 65px;
-    transition: transform ease-in-out 1s;
-}
-.skills__text {
-    grid-column: 1/span 3;
+.skills__text, .softSkills__text {
     padding: 10px;
 }
-.skills__text::first-line{
+.skills__text::first-line, .softSkills__text::first-line{
     font-weight: 900;
 }
-/* Skills END */
-/* Skills Animations */
-.flex-skillitem:hover p{
-    transform: rotate(-360deg);
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-.flex-skillitem:hover img{
-    transform: rotate(360deg) scale(0%);
-    cursor: pointer;
-}
-/* Skills Animations END */
 /* Soft Start */
-.grid-about__softskills{
-    display: grid;
-    width: min-content;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(5, 100px);
-    align-items: center;
-    justify-items: center;
-    gap: 15px;
-    grid-auto-flow: row;
-    grid-column: 3/span 2;
-    grid-row: 4/span 5;
-}
-.softskills__title{
-    grid-column: 1/4;
-}
-.flex-softskills-item{
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-softskills-item__icon{
+.flex-skillitem__icon{
     position: relative;
     color: rgb(89, 88, 102);
     font-size: 50px;
     transition: transform ease-in-out 1s;
 }
-.flex-softskills-item__title{
-    position: absolute;
-    color: black;
-    font-size: 0px;
-    margin-bottom: 0px;
-    transition: transform ease-in-out 1s, font-size ease-in-out 1s;
-}
-.softskills__text{
-    grid-row: 5;
-    grid-column: 1/span 3;
-}
-/* Soft Skills Animations */
-.flex-softskills-item:hover p{
-    transform: rotate(360deg);
+/* Soft End */
+
+/* Skills END */
+
+/* Skills Animations */
+.flex-skillitem:hover p, .flex-softSkillitem:hover p{
+    transform: rotate(-360deg);
     font-size: 1.5rem;
+    cursor: pointer;
 }
-.flex-softskills-item:hover i{
-    transform: rotate(-360deg) scale(0%);
+.flex-skillitem:hover img, .flex-softSkillitem:hover i{
+    transform: rotate(360deg) scale(0%);
+    cursor: pointer;
 }
 /* Skills Animations END */
-/* Soft End */
+
 
 
 /* PROJECTS START */
@@ -315,7 +277,6 @@ body{
 /* Project Asides Start */
 .flex-aside{
     align-self: center;
-    margin: 0 30px;
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -416,5 +377,42 @@ body{
     }
     100%{
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}
+
+/* Media queries */
+
+@media screen and (max-width: 992px){
+    .grid-about{
+        padding: 50px 5%;
+    }
+    .flex-about__skills{
+        grid-column: span 4;
+        grid-row: 4;
+        width: 100%;
+    }
+    .flex-about__skillSoft{
+        grid-column: span 4;
+        grid-row: 5;
+        width: 100%;
+    }
+    .skills-container{
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, 150px);
+        grid-template-rows: repeat(2, minmax(100px, 1fr));
+        gap: 15px;
+    }
+    .grid-section-project{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, min-content);
+        padding: 3rem;
+    }
+    .grid-projects{
+        grid-column: 1/-1;
+    }
+    .flex-aside{
+        width: 100%;
+        grid-row: 3;
+        grid-column: 1/-1;
     }
 }

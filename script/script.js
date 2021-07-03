@@ -1,8 +1,8 @@
 
 let skillText = document.querySelector(".skills__text");
-let softText = document.querySelector(".softskills__text");
+let softText = document.querySelector(".softSkills__text");
 let skills = document.querySelectorAll(".flex-skillitem");
-let softSkills = document.querySelectorAll(".flex-softskills-item");
+let softSkills = document.querySelectorAll(".flex-softSkillitem");
 let projects = document.querySelectorAll(".grid-projects__item");
 let aside = document.querySelector(".flex-aside");
 
