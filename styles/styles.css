@@ -443,6 +443,9 @@ body{
 }
 
 @media screen and (max-width: 768px) {
+    .header__text{
+        max-width: 90%;
+    }
     .grid-about{
         padding: 80px 10px;
     }
@@ -473,6 +476,10 @@ body{
     }
     .grid-projects{
         grid-column: 1/-1;
+    }
+    .grid-projects__item{
+        grid-column: 1/-1;
+        height: 150px;
     }
     .flex-aside{
         width: 100%;
