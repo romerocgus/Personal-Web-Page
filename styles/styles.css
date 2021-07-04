@@ -199,7 +199,7 @@ body{
 }
 .flex-skillitem__img, .flex-skillitem__icon {
     position: relative;
-    width: 65px;
+    width: 4rem;
     transition: transform ease-in-out 1s;
 }
 .flex-skillitem__p{
@@ -218,7 +218,7 @@ body{
 .flex-skillitem__icon{
     position: relative;
     color: rgb(89, 88, 102);
-    font-size: 50px;
+    font-size: 3.1rem;
     transition: transform ease-in-out 1s;
 }
 /* Soft End */
@@ -382,7 +382,48 @@ body{
 
 /* Media queries */
 
-@media screen and (max-width: 992px){
+@media screen and (min-width: 768px) and (max-width: 992px){
+    :root{
+        font-size: 14px;
+    }
+    .grid-about{
+        padding: 50px 5%;
+    }
+    .flex-about__skills{
+        grid-column: span 4;
+        grid-row: 4;
+        width: 100%;
+    }
+    .flex-about__skillSoft{
+        grid-column: span 4;
+        grid-row: 5;
+        width: 100%;
+    }
+    .skills-container{
+        width: 70%;
+        grid-template-columns: repeat(auto-fill, minmax(min-content,100px));
+        grid-template-rows: repeat(2, minmax(100px, 1fr));
+        gap: 15px;
+    }
+    .grid-section-project{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, min-content);
+        padding: 3rem;
+    }
+    .grid-projects{
+        grid-column: 1/-1;
+    }
+    .flex-aside{
+        width: 100%;
+        grid-row: 3;
+        grid-column: 1/-1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root{
+        font-size: 12px;
+    }
     .grid-about{
         padding: 50px 5%;
     }
@@ -398,7 +439,7 @@ body{
     }
     .skills-container{
         width: 100%;
-        grid-template-columns: repeat(auto-fill, 150px);
+        grid-template-columns: repeat(auto-fill, minmax(min-content,100px));
         grid-template-rows: repeat(2, minmax(100px, 1fr));
         gap: 15px;
     }
