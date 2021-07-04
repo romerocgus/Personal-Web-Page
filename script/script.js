@@ -71,7 +71,6 @@ let asideMaker = ()=> {
             text= `<h3 class="card__title">Proyecto 1</h3>
 			<p class="card__text">Texto del proyecto 1</p>`;
             projects[i].addEventListener("click", ()=>{
-                console.log(i);
                 aside.classList.add("aside-visible");
                 aside.classList.remove("even");
                 aside.innerHTML = text;
