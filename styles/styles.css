@@ -443,11 +443,11 @@ body{
 }
 
 @media screen and (max-width: 768px) {
-    :root{
-        font-size: 12px;
-    }
     .grid-about{
-        padding: 80px 5%;
+        padding: 80px 10px;
+    }
+    .subtitle{
+        font-size: 5rem;
     }
     .flex-about__skills{
         grid-column: span 4;
@@ -469,7 +469,7 @@ body{
     .grid-section-project{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, min-content);
-        padding: 3rem;
+        padding: 80px 10px;
     }
     .grid-projects{
         grid-column: 1/-1;
@@ -478,5 +478,11 @@ body{
         width: 100%;
         grid-row: 3;
         grid-column: 1/-1;
+    }
+    .grid-section-contact{
+        padding: 80px 10px;
+    }
+    .flex-form{
+        width: 100%;
     }
 }
