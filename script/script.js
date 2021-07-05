@@ -1,4 +1,7 @@
-
+let btnBack = document.querySelector("#bio__btn-back");
+let btnFwd = document.querySelector("#bio__btn-fwd");
+let bioDots = document.querySelectorAll(".bio__nav-dot");
+let bioText = document.querySelector(".bio__text");
 let skillText = document.querySelector(".skills__text");
 let softText = document.querySelector(".softSkills__text");
 let skills = document.querySelectorAll(".flex-skillitem");
@@ -102,6 +105,56 @@ let asideMaker = ()=> {
     }
 }
 
+let bioTextMaker = ()=>{
+    let texto1 = `I started my career with the dream of give to the world the most unique experiences in every project that i contribute to make. I really enjoy develop, design and experiment with <span class="colors">colors</span>, <span class="fonts">fonts</span>, <span class="anime">animations</span> and every component that makes a difference to give me the posibility of bring to life UIs that people will love to use!`;
+    let texto2 = `I'm naturally curious, love to learn new skills and create awesome projects where i can share innovative (or crazy) ideas and put them into action. I'm constantly challenging myself to improve, looking for creative solutions in every aspect of my life.`;
+    let texto3 = `Well... That's a little bit of me, now i like to know more about you. If you want to talk, being for work, some insight, cool ideas or whatever, please send me a message in my <a class="contact-link" href="#contact">contact section</a> or <a class="contact-link" href="#footer">follow me</a> and we'll be friends!. i'll love to read what you have to say.<br>
+    Hope you enjoy my site as much as i did making it!<br>
+    Gus`;
+    let arrayText= [texto1,texto2,texto3];
+    let arrayPos = 0;
+    bioDots[0].classList.add("dot-active");
+    bioText.innerHTML = arrayText[0];
+
+    btnFwd.addEventListener("click",()=>{
+        if (arrayPos == 0){
+            bioText.innerHTML = arrayText[1];
+            bioDots[0].classList.remove("dot-active");
+            bioDots[1].classList.add("dot-active");
+            arrayPos++;
+        } else if (arrayPos == 1){
+            bioText.innerHTML = arrayText[2];
+            bioDots[1].classList.remove("dot-active");
+            bioDots[2].classList.add("dot-active");
+            arrayPos++
+        } else if (arrayPos == 2){
+            bioText.innerHTML = arrayText[0];
+            bioDots[2].classList.remove("dot-active");
+            bioDots[0].classList.add("dot-active");
+            arrayPos = 0;
+        }
+    });
+    btnBack.addEventListener("click",()=>{
+        if (arrayPos == 0){
+            bioText.innerHTML = arrayText[2];
+            bioDots[0].classList.remove("dot-active");
+            bioDots[2].classList.add("dot-active");
+            arrayPos = 2;
+        } else if (arrayPos == 2){
+            bioText.innerHTML = arrayText[1];
+            bioDots[2].classList.remove("dot-active");
+            bioDots[1].classList.add("dot-active");
+            arrayPos--;
+        } else if (arrayPos == 1){
+            bioText.innerHTML = arrayText[0];
+            bioDots[1].classList.remove("dot-active");
+            bioDots[0].classList.add("dot-active");
+            arrayPos--;
+        }
+    });
+
+}
 skillTextAsign();
 softSkillTextAsign();
 asideMaker();
+bioTextMaker();
