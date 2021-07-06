@@ -1,13 +1,13 @@
-let btnBack = document.querySelector("#bio__btn-back");
-let btnFwd = document.querySelector("#bio__btn-fwd");
-let bioDots = document.querySelectorAll(".bio__nav-dot");
-let bioText = document.querySelector(".bio__text");
-let skillText = document.querySelector(".skills__text");
-let softText = document.querySelector(".softSkills__text");
-let skills = document.querySelectorAll(".flex-skillitem");
-let softSkills = document.querySelectorAll(".flex-softSkillitem");
-let projects = document.querySelectorAll(".grid-projects__item");
-let aside = document.querySelector(".flex-aside");
+const btnBack = document.querySelector("#bio__btn-back");
+const btnFwd = document.querySelector("#bio__btn-fwd");
+const bioDots = document.querySelectorAll(".bio__nav-dot");
+const bioText = document.querySelector(".bio__text");
+const skillText = document.querySelector(".skills__text");
+const softText = document.querySelector(".softSkills__text");
+const skills = document.querySelectorAll(".flex-skillitem");
+const softSkills = document.querySelectorAll(".flex-softSkillitem");
+const projects = document.querySelectorAll(".grid-projects__item");
+const aside = document.querySelector(".flex-aside");
 
 let skillTextAsign = ()=>{
     for (i = 0; i< skills.length; i++){
@@ -158,3 +158,71 @@ skillTextAsign();
 softSkillTextAsign();
 asideMaker();
 bioTextMaker();
+
+// intersection observers
+// Nav
+const navItem = document.querySelectorAll(".navbar__item");
+const sections = document.querySelectorAll(".section");
+const navOptions = {
+    threshold: 0,
+    rootMargin: "-150px"
+};
+console.log(navItem);
+
+const navScroll = new IntersectionObserver(function(entries,navScroll){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting){
+            return;
+        } else {
+            console.log(entry.target);
+            if(entry.target.id == "header"){
+                navItem[0].classList.add("active");
+                navItem[1].classList.remove("active");
+            }else if(entry.target.id == "about"){
+                navItem[1].classList.add("active");
+                navItem[0].classList.remove("active");
+                navItem[2].classList.remove("active");
+            }else if(entry.target.id == "projects"){
+                navItem[2].classList.add("active");
+                navItem[1].classList.remove("active");
+                navItem[3].classList.remove("active");
+            }else if(entry.target.id == "contact"){
+                navItem[3].classList.add("active");
+                navItem[2].classList.remove("active");
+            }
+        }
+        window.history.pushState("", "", `#${entry.target.id}`);
+    });
+},navOptions);
+sections.forEach(section=>{
+    navScroll.observe(section);
+});
+
+//Faders Start
+const fadeBot = document.querySelectorAll(".fade-bot");
+const fadeRight = document.querySelectorAll(".fade-right");
+const fadeLeft = document.querySelectorAll(".fade-left");
+
+const appearOptions = {
+    root: null
+};
+const appearOnScroll = new IntersectionObserver(function(entries,appearOnScroll){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting){
+            return;
+        }else{
+            entry.target.classList.add("appear");
+            appearOnScroll.unobserve(entry.target);
+        }
+    })
+},appearOptions);
+fadeBot.forEach(fader =>{
+    appearOnScroll.observe(fader);
+});
+fadeRight.forEach(fader =>{
+    appearOnScroll.observe(fader);
+});
+fadeLeft.forEach(fader =>{
+    appearOnScroll.observe(fader);
+});
+//Faders End

@@ -9,24 +9,24 @@
     <title>Document</title>
 </head>
 <body>
-	<header class="header">
+	<header id="header" class="header section">
 			<h1 class="header__title">Hi, Welcome!</h1>
 			<span class="header__firstlane">I'm Gus, front-end developer. Let's make something awesome!</span>
 			<p class="header__text">im really passionate about creating great and beautiful UIs & givin people the best experiences! feel free to check out my Bio and some of my projects, also leave me a message if you like what i do and want to work together.</p>
-			<a href="#navbar">
+			<a href="#about">
 				<i class="header__arrow far fa-arrow-alt-circle-down"></i>
 			</a>
 	</header>
 	<nav id="navbar" class="navbar">
 		<a href="index.html" class="navbar__item">Home</a>
-		<a href="#about" class="navbar__item active">About</a>
+		<a href="#about" class="navbar__item">About</a>
 		<a href="#projects" class="navbar__item">Projects</a>
 		<a href="#contact" class="navbar__item">Contact</a>
 	</nav>
 	<!-- main start -->
-	<main id="about" class="grid-about">
-		<h2 class="subtitle">About me</h2>
-		<div class="grid-about__bio card">
+	<main id="about" class="grid-about section">
+		<h2 class="subtitle fade-left">About me</h2>
+		<div class="grid-about__bio card fade-bot">
 			<div class="bio__content">
 				<img class="bio__content-img" src="images/foto castell chiquita.jpg" alt="Picture">
 				<h3 class="content-header__title">Hello Everyone, nice to meet you!</h3>
@@ -45,7 +45,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="flex-about__skills card">
+		<div class="flex-about__skills card fade-left">
 			<h3 class="skills__title card__title">Technologies i use</h3>
 			<div class="skills-container">
 				<div id="html" class="flex-skillitem">
@@ -88,7 +88,7 @@
 			<p class="skills__text"></p>
 			
 		</div>
-		<div class="flex-about__skillSoft card">
+		<div class="flex-about__skillSoft card fade-right">
 			<h3 class="skills__title card__title">Soft Skills</h3>
 			<div class="skills-container">
 				<div class="flex-softSkillitem">
@@ -115,9 +115,9 @@
 			<p class="softSkills__text"></p>
 		</div>
 	</main>
-	<section id="projects" class="grid-section-project">
-		<h2 class="subtitle" >My Projects</h2>
-		<div class="grid-projects card">
+	<section id="projects" class="grid-section-project section">
+		<h2 class="subtitle fade-right" >My Projects</h2>
+		<div class="grid-projects card fade-bot">
 			<div class="grid-projects__item grid-projects__long">
 				<img class="grid-projects__img" src="images/pelicula-de-harry-potter-and-the-cursed-child1.jpg" alt="">
 			</div>
@@ -133,9 +133,9 @@
 		</div>
 		<aside class="flex-aside card"></aside>
 	</section>
-	<section class="grid-section-contact">
-		<h2 class="subtitle" id="contact">Lets Talk</h2>
-		<form class="flex-form card">
+	<section id="contact" class="grid-section-contact section">
+		<h2 class="subtitle fade-left" >Lets Talk</h2>
+		<form class="flex-form card fade-bot">
 			<input type="text" id="name" placeholder="Your Name">
 			<input type="email" id="mail" placeholder="Your e-mail">
 			<textarea id="" cols="30" rows="10" placeholder="Your Message"></textarea>
