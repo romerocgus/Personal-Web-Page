@@ -457,19 +457,19 @@ body{
 .fade-bot{
     opacity: 0;
     transform: translateY(50%);
-    transition: opacity 350ms ease-in, transform 350ms ease-in;
+    transition: opacity 350ms ease-in, transform 500ms ease-in;
 }
 
 .fade-right{
     opacity: 0;
     transform: translateX(50%);
-    transition: opacity 350ms ease-in, transform 350ms ease-in;
+    transition: opacity 350ms ease-in, transform 500ms ease-in;
     transition-delay: .5s;
 }
 .fade-left{
     opacity: 0;
     transform: translateX(-50%);
-    transition: opacity 350ms ease-in, transform 350ms ease-in;
+    transition: opacity 350ms ease-in, transform 500ms ease-in;
 }
 .fade-bot.appear,
 .fade-right.appear,

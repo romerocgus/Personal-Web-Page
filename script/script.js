@@ -176,17 +176,23 @@ const navScroll = new IntersectionObserver(function(entries,navScroll){
             if(entry.target.id == "header"){
                 navItem[0].classList.add("active");
                 navItem[1].classList.remove("active");
+                navItem[2].classList.remove("active");
+                navItem[3].classList.remove("active");
             }else if(entry.target.id == "about"){
                 navItem[1].classList.add("active");
                 navItem[0].classList.remove("active");
                 navItem[2].classList.remove("active");
+                navItem[3].classList.remove("active");
             }else if(entry.target.id == "projects"){
                 navItem[2].classList.add("active");
                 navItem[1].classList.remove("active");
+                navItem[0].classList.remove("active");
                 navItem[3].classList.remove("active");
             }else if(entry.target.id == "contact"){
                 navItem[3].classList.add("active");
+                navItem[1].classList.remove("active");
                 navItem[2].classList.remove("active");
+                navItem[0].classList.remove("active");
             }
         }
         window.history.pushState("", "", `#${entry.target.id}`);
@@ -202,7 +208,7 @@ const fadeRight = document.querySelectorAll(".fade-right");
 const fadeLeft = document.querySelectorAll(".fade-left");
 
 const appearOptions = {
-    root: null
+    rootMargin: "0px 0px -80px 0px"
 };
 const appearOnScroll = new IntersectionObserver(function(entries,appearOnScroll){
     entries.forEach(entry=>{
