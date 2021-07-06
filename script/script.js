@@ -165,16 +165,14 @@ const navItem = document.querySelectorAll(".navbar__item");
 const sections = document.querySelectorAll(".section");
 const navOptions = {
     threshold: 0,
-    rootMargin: "-150px"
+    rootMargin: "0px 0px -150px 0px"
 };
-console.log(navItem);
 
 const navScroll = new IntersectionObserver(function(entries,navScroll){
     entries.forEach(entry=>{
         if(!entry.isIntersecting){
             return;
         } else {
-            console.log(entry.target);
             if(entry.target.id == "header"){
                 navItem[0].classList.add("active");
                 navItem[1].classList.remove("active");

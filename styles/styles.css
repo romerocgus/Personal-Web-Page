@@ -14,7 +14,8 @@ body{
     font-family: 'Saira Condensed', sans-serif;
     color: var(--textColor);
     letter-spacing: 1.5px;
-    background: white;    
+    background: white;
+    overflow-x: hidden;
 }
 .contact-link {
     color: var(--detailColor);
@@ -517,7 +518,7 @@ body{
     .grid-section-project{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, min-content);
-        padding: 3rem;
+        padding: 80px 5%;
     }
     .grid-projects{
         grid-column: 1/-1;
@@ -526,6 +527,9 @@ body{
         width: 100%;
         grid-row: 3;
         grid-column: 1/-1;
+    }
+    .grid-section-contact{
+        padding: 80px 5%;
     }
 }
 
