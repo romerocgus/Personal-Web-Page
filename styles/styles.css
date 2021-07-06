@@ -270,7 +270,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.flex-skillitem__img, .flex-skillitem__icon {
+.flex-skillitem__img {
     position: relative;
     width: 4rem;
     transition: transform ease-in-out 1s;
@@ -287,14 +287,10 @@ body{
 .skills__text::first-line, .softSkills__text::first-line{
     font-weight: 900;
 }
-/* Soft Start */
-.flex-skillitem__icon{
-    position: relative;
-    color: rgb(89, 88, 102);
-    font-size: 3.1rem;
-    transition: transform ease-in-out 1s;
+/* SoftSkills Start */
+.flex-softSkillitem img{
+    width: 4.5rem;
 }
-/* Soft End */
 
 /* Skills END */
 
@@ -304,7 +300,7 @@ body{
     font-size: 1.5rem;
     cursor: pointer;
 }
-.flex-skillitem:hover img, .flex-softSkillitem:hover i{
+.flex-skillitem:hover img, .flex-softSkillitem:hover img{
     transform: rotate(360deg) scale(0%);
     cursor: pointer;
 }
