@@ -54,8 +54,9 @@ let bioTextMaker = ()=>{
 
 }
 bioTextMaker();
+//****Biography navigation END****//
 
-//****soft skills text generator****//
+//****Soft Skills Text ****//
 const softText = document.querySelector(".softSkills__text");
 const softSkills = document.querySelectorAll(".flex-softSkillitem");
 
@@ -108,58 +109,51 @@ let softSkillTextAsign = ()=>{
     // };
 };
 softSkillTextAsign();
+//****Soft Skills Text End****//
 
-//****Projects Info modal ****//
+//****Projects Modal ****//
+
+
 const projects = document.querySelector(".grid-projects");
-projects.addEventListener("click", e=>{
-    const modalOpen = e.target.closest(".project-title");
-    if(!modalOpen) return;
-    const modal = modalOpen.parentNode.nextElementSibling;
+
+projects.addEventListener("click", openModal = function(e){
+    const modalOpener = e.target.closest(".project-title");
+    if(!modalOpener) return;
+    const modal = modalOpener.parentNode.nextElementSibling;
     const closeButton = modal.querySelector(".modal-close");
     modal.classList.add("open");
-    const body = document.querySelector("body");
+
     closeButton.addEventListener("click", _ =>{
         modal.classList.remove("open");
     });
+    
 });
 
-//****intersection observers****//
+//****Projects Modal End****//
+
+//****Intersection Observers****//
 // Nav //
 const navItem = document.querySelectorAll(".navbar__item");
 const sections = document.querySelectorAll(".section");
 const navOptions = {
     threshold: 0,
-    rootMargin: "0px 0px -150px 0px"
+    rootMargin: "0px"
 };
 
 const navScroll = new IntersectionObserver(function(entries,navScroll){
     entries.forEach(entry=>{
-        if(!entry.isIntersecting){
-            return;
-        } else {
-            if(entry.target.id == "header"){
-                navItem[0].classList.add("active");
-                navItem[1].classList.remove("active");
-                navItem[2].classList.remove("active");
-                navItem[3].classList.remove("active");
-            }else if(entry.target.id == "about"){
-                navItem[1].classList.add("active");
-                navItem[0].classList.remove("active");
-                navItem[2].classList.remove("active");
-                navItem[3].classList.remove("active");
-            }else if(entry.target.id == "projects"){
-                navItem[2].classList.add("active");
-                navItem[1].classList.remove("active");
-                navItem[0].classList.remove("active");
-                navItem[3].classList.remove("active");
-            }else if(entry.target.id == "contact"){
-                navItem[3].classList.add("active");
-                navItem[1].classList.remove("active");
-                navItem[2].classList.remove("active");
-                navItem[0].classList.remove("active");
-            }
+        if(entry.isIntersecting){
+            navItem.forEach(item=>{
+                if(entry.target.id == item.innerHTML){
+                    item.classList.add("active");
+                    window.history.pushState("", "", `#${entry.target.id}`);
+                }else{
+                    item.classList.remove("active");
+                }
+            });
         }
-        window.history.pushState("", "", `#${entry.target.id}`);
+        // }
+        // 
     });
 },navOptions);
 sections.forEach(section=>{
@@ -192,4 +186,13 @@ fadeRight.forEach(fader =>{
 });
 fadeLeft.forEach(fader =>{
     appearOnScroll.observe(fader);
+});
+
+//****Intersection Observers End****//
+
+// ****NavBar Click event****//
+navItem.forEach(item=>{
+    item.addEventListener("click",()=>{
+        item.classList.add("active");
+    });
 });
