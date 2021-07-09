@@ -133,7 +133,7 @@ projects.addEventListener("click", openModal = function(e){
 
 //****Intersection Observers****//
 // Nav //
-const navItem = document.querySelectorAll(".navbar__item");
+const navItem = document.querySelectorAll(".navbar__link");
 const sections = document.querySelectorAll(".section");
 const navOptions = {
     threshold: 0,
@@ -145,10 +145,10 @@ const navScroll = new IntersectionObserver(function(entries,navScroll){
         if(entry.isIntersecting){
             navItem.forEach(item=>{
                 if(entry.target.id == item.innerHTML){
-                    item.classList.add("active");
+                    item.parentNode.classList.add("active");
                     window.history.pushState("", "", `#${entry.target.id}`);
                 }else{
-                    item.classList.remove("active");
+                    item.parentNode.classList.remove("active");
                 }
             });
         }
@@ -190,9 +190,11 @@ fadeLeft.forEach(fader =>{
 
 //****Intersection Observers End****//
 
-// ****NavBar Click event****//
-navItem.forEach(item=>{
-    item.addEventListener("click",()=>{
-        item.classList.add("active");
-    });
+//**** Navbar Responsive ****//
+const btnNav = document.querySelector(".navbar__button");
+const navtoggle = document.querySelector(".navbar__list-items");
+console.log(navtoggle);
+btnNav.addEventListener("click",()=>{
+    
+    navtoggle.classList.toggle("list-active");
 });

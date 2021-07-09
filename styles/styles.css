@@ -107,37 +107,68 @@ body{
     top: 0;
     z-index: 1;
     flex-wrap: wrap;
-    padding: 10px;
-    justify-content: space-evenly;
+    align-items: center;
     background: #fff;
+    height: 60px;
     border-bottom: 1px solid #d4d4d4;
     box-shadow: 0px 5px 10px rgba(144, 144, 145, 0.342);
 }
+.navbar__logo{
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin: 0px 15px;
+    user-select: none;
+    width: min-content;
+}
+.navbar__list-items{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
 .navbar__item{
-    color: black;
+    list-style: none;
     width: 90px;
     border-radius: 5px;
     text-align: center;
-    text-decoration: none;
+}
+.navbar__link{
+    color: black;
     font-size: 1.5rem;
+    text-decoration: none;
+}
+.navbar__button{
+    cursor: pointer;
+    display: none;
+}
+.btnLine{
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: black;
 }
 .navbar__item:hover{
     background-color: rgba(223, 226, 255, 0.562);
 }
-.navbar__item:focus{
+.navbar__items:focus{
     background-color: rgba(223, 226, 255, 0.562);
 }
 
 .active{
-    color: var(--detailColor);
     position: relative;
     background-color: rgba(223, 226, 255, 0.562);
+}
+.active a{
+    color: var(--detailColor);
 }
 .active::before{
     content: "";
     position: absolute;
     left: 0px;
-    top: calc(100% + 6.5px);
+    top: calc(100% + 9.5px);
     width: 100%;
     height: 3.5px;
     background-color: var(--detailColor);
@@ -580,6 +611,36 @@ body{
 }
 
 @media screen and (max-width: 768px) {
+
+    /* navbar responsive */
+    .navbar{
+        justify-content: space-between;
+        padding: 0px 4rem;
+    }
+    .navbar__logo{
+        margin: 0px;
+    }
+    .navbar__button{
+        display: block;
+    }
+    .navbar__list-items{
+        background-color: rgba(255, 255, 255, 0.877);
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        border-bottom-left-radius: 8px;
+        height: 300px;
+        width: 30%;
+        top: 60px;
+        right: 0;
+        z-index: -50;
+        transform: translateX(100%);
+        transition: transform 1s ease-in-out;
+    }
+    .list-active{
+        transform: translateX(0);
+    }
+
     .fade-right{
         transform: translateX(-50%);
         transition-delay: 0ms;
