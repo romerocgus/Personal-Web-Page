@@ -166,7 +166,7 @@ const fadeRight = document.querySelectorAll(".fade-right");
 const fadeLeft = document.querySelectorAll(".fade-left");
 
 const appearOptions = {
-    rootMargin: "0px 0px -80px 0px"
+    rootMargin: "0px 0px 100px 0px"
 };
 const appearOnScroll = new IntersectionObserver(function(entries,appearOnScroll){
     entries.forEach(entry=>{
