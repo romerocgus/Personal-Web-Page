@@ -193,7 +193,6 @@ fadeLeft.forEach(fader =>{
 //**** Navbar Responsive ****//
 const btnNav = document.querySelector(".navbar__button");
 const navtoggle = document.querySelector(".navbar__list-items");
-console.log(navtoggle);
 btnNav.addEventListener("click",()=>{
     
     navtoggle.classList.toggle("list-active");

@@ -236,17 +236,15 @@ body{
     color: lightgray;
 }
 .bio__nav-btn:hover{
-    background-color: var(--detailColor);
-    color: white;
-    /* color: var(--detailColor); */
-    box-shadow: 0px 0px 0px 3px var(--detailColor);
+    background-image: linear-gradient(to bottom right, #8d10be 5%, var(--detailColor) 60%);
+    box-shadow: 0px 0px 0px 3px lightgray;
 }
-.bio__nav-btn:active{
+/* .bio__nav-btn:active{
     background-color: slateblue;
     color: white;
-    /* color: var(--detailColor); */
+    color: var(--detailColor);
     box-shadow: 0px 0px 0px 3px var(--detailColor);
-}
+} */
 .bio__nav-dot{
     width: 10px;
     height: 10px;
@@ -336,7 +334,7 @@ body{
 /* PROJECTS START */
 .grid-section-project{
     background-color: rgb(233, 241, 255);
-    padding: 150px 10%;
+    padding: 150px 20%;
     margin: 55px 0px;
     display: grid;
     grid-template-columns: 1fr;
@@ -374,7 +372,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: height 1s ease-in-out, font-size 0s 250ms;
+    transition: height 0.5s ease-in-out, font-size 0s 250ms;
 }
 
 .projects-modal{
@@ -397,6 +395,7 @@ body{
 
 .modal-close{
     position: absolute;
+    color: var(--detailColor);
     background-color: white;
     border-radius: 50%;
     top: -20px;
@@ -404,7 +403,6 @@ body{
     font-size: 3rem;
 }
 .modal-close:hover{
-    color: var(--detailColor);
     cursor: pointer;
 }
 .modal__text{
@@ -487,17 +485,30 @@ body{
 /* FOOTER START */
 
 .flex-footer{
-    background-color: rgb(186, 193, 253);
+    background-color: #fff;
+    border-top: 1px solid #d4d4d4;
     display: flex;
-    height: 40px;
+    flex-direction: column;
     justify-content:center;
     align-items: center;
-    border-top: 1px solid #d4d4d4;
 }
 
-.flex-footer i{
+.footer__link{
+    color: black;
     margin: 0px 15px;
     font-size: 2rem;
+    width: 25px;
+}
+
+.footer__link:hover {
+    color: var(--detailColor);
+}
+
+.footer__text{
+    font-weight: bold;
+}
+.footer__copyright{
+    color: var(--detailColor);
 }
 
 /* KEYFRAMES */
