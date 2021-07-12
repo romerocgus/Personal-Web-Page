@@ -206,19 +206,19 @@ body{
     clip-path: polygon(43% 0, 100% 0, 100% 100%, 0 100%, 0 46%, 31% 0, 0 31%, 20% 0, 0 16%, 13% 0, 5% 6%, 18% 19%);
 }
 .content-header__title{
-    font-size: 3rem;
-    line-height: 3.2rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    margin: 20px 0px;
 }
 .content-header__text{
     color: var(--subtextColor);
-    font-size: 2rem;
-    line-height: 2.2rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: 20px 0px;
 }
 .bio__text{
     color: var(--subtextColor);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 .bio__nav{
     grid-column: span 2;
@@ -356,6 +356,7 @@ body{
 .grid-projects__item{
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
 }
 .grid-projects__img{
     width: 100%;
@@ -370,11 +371,14 @@ body{
     width: 100%;
     height: 0px;
     color: var(--headerTextColor);
-    font-size: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: height 0.5s ease-in-out, font-size 0s 250ms;
+    transition: height 0.5s ease-in-out;
+}
+.project-title{
+    font-size: 0px;
+    transition: font-size 0s 250ms;
 }
 
 .projects-modal{
@@ -409,6 +413,7 @@ body{
 }
 .modal__text{
     width: 100%;
+    font-size: 1.2rem;
     text-align: center;
     padding: 0px 5%;
     overflow-y: scroll;
@@ -428,16 +433,20 @@ body{
     grid-column: 3/4;
     grid-row: 1/4;
 }
+
 .grid-projects__item:hover img{
     width: 150%;
     filter: grayscale(0.8);
     cursor: pointer;
 }
-.grid-projects__item:hover figcaption{
+.grid-projects__item:hover .grid-projects__caption{
     height: 30%;
-    font-size: 2rem;
     cursor: pointer;
 }
+.grid-projects__item:hover .project-title{
+    font-size: 2rem;
+}
+
 /* Project Gallery End */
 
 /* CONTACT FORM START */
@@ -612,8 +621,8 @@ body{
     }
     .grid-projects{
         grid-column: 1/-1;
-        grid-template-columns: repeat(3, 200px);
-        grid-template-rows: 100px 100px 200px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 100px 200px 200px;
         gap: 15px;
         padding: 15px;
     }
@@ -623,7 +632,9 @@ body{
 }
 
 @media screen and (max-width: 768px) {
-
+    :root{
+        font-size: 14px;
+    }
 /* navbar responsive */
     .navbar{
         justify-content: space-between;
