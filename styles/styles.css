@@ -324,8 +324,8 @@ body{
     cursor: pointer;
 }
 .flex-skillitem:hover img, .flex-softSkillitem:hover img{
-    transform: scale(0%);
-    -webkit-transform: scale(0%);
+    transform: scale(0,0);
+    -webkit-transform: scale(0,0);
     cursor: pointer;
 }
 /* Skills Animations END */
