@@ -1,7 +1,8 @@
 :root{
     scroll-behavior: smooth;
-    --textColor: rgb(0, 0, 0);
-    --subtextColor: rgb(83, 82, 82);
+    --headerTextColor: #fff;
+    --textColor: rgb(43, 43, 51);
+    --subtextColor: rgb(79, 78, 94);
     --detailColor: rgb(77, 125, 210);
 }
 
@@ -18,6 +19,9 @@ body{
     background-color:rgb(242, 246, 253);
     overflow-x: hidden;
 }
+.dark {
+    background-color: black;
+}
 .contact-link {
     color: var(--detailColor);
 }
@@ -33,13 +37,13 @@ body{
     position: absolute;
     content: "";
     width: 75%;
-    background-color: black;
+    background-color: var(--textColor);
     height: 0.7rem;
     border-radius: 2px;
 }
 
 .card{
-    background-color: white;
+    background-color: #fff;
     margin-top: 4rem;
     padding: 1rem;
     border-radius: 8px;
@@ -56,13 +60,13 @@ body{
     left: 25%;
     content: "";
     width: 75%;
-    background-color: black;
+    background-color: var(--textColor);
     height: 0.3rem;
     border-radius: 1px;
 }
 /* Header START*/
 .header{
-    color: #fff;
+    color: var(--headerTextColor);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,7 +89,7 @@ body{
     letter-spacing: 1px;
 }
 .header__text{
-    color: #fff;
+    color: var(--headerTextColor);
     font-size: 1.2rem;
     max-width: 50%;
     letter-spacing: .5px;
@@ -95,7 +99,7 @@ body{
 
 .header__arrow{
     position: relative;
-    color: #fff;
+    color: var(--headerTextColor);
     font-size: 50px;
 }
 
@@ -128,7 +132,7 @@ body{
     text-align: center;
 }
 .navbar__link{
-    color: black;
+    color: var(--textColor);
     font-size: 1.5rem;
     text-decoration: none;
 }
@@ -174,7 +178,6 @@ body{
 /* ABOUT MAIN START */
 
 .grid-about{
-    background-color:rgb(242, 246, 253);
     display: grid;  
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, min-content);
@@ -213,6 +216,7 @@ body{
     margin-bottom: 20px;
 }
 .bio__text{
+    color: var(--subtextColor);
     font-size: 1.3rem;
 }
 .bio__nav{
@@ -226,29 +230,24 @@ body{
     display: flex;
     height: 40px;
     width: 40px;
-    box-shadow: 0px 0px 0px 3px lightgray;
+    box-shadow: 0px 0px 0px 3px rgb(209, 209, 209);
     border-radius: 50%;
     
 }
 .bio__nav-btn i{
     margin: auto;
     font-size: 2rem;
-    color: lightgray;
+    color: rgb(209, 209, 209);
 }
 .bio__nav-btn:hover{
     background-image: linear-gradient(to bottom right, #8d10be 5%, var(--detailColor) 60%);
-    box-shadow: 0px 0px 0px 3px lightgray;
+    box-shadow: 0px 0px 0px 3px rgb(209, 209, 209);
 }
-/* .bio__nav-btn:active{
-    background-color: slateblue;
-    color: white;
-    color: var(--detailColor);
-    box-shadow: 0px 0px 0px 3px var(--detailColor);
-} */
+
 .bio__nav-dot{
     width: 10px;
     height: 10px;
-    background: lightgray;
+    background: rgb(209, 209, 209);
     border-radius: 50%;
 }
 .dot-active{
@@ -300,7 +299,6 @@ body{
 }
 .flex-skillitem__p{
     position: absolute;
-    color: black;
     font-size: 0px;
     transition: transform ease-in-out 1s, font-size ease-in-out 1s;
 }
@@ -363,12 +361,12 @@ body{
     object-fit:cover;
 }
 .grid-projects__caption {
-    background-color: rgba(77, 126, 210, 0.692);
+    background-color: rgba(77, 125, 210, 0.69);
     position: absolute;
     bottom: 0;  
     width: 100%;
     height: 0px;
-    color: white;
+    color: var(--headerTextColor);
     font-size: 0px;
     display: flex;
     justify-content: center;
@@ -383,7 +381,7 @@ body{
     left: 10rem;
     right: 10rem;
     z-index: 10;
-    background-color: white;
+    background-color: #fff;
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -397,7 +395,7 @@ body{
 .modal-close{
     position: absolute;
     color: var(--detailColor);
-    background-color: white;
+    background-color: #fff;
     border-radius: 50%;
     top: -20px;
     left: -20px;
@@ -438,7 +436,6 @@ body{
 
 /* CONTACT FORM START */
 .grid-section-contact{
-    background-color: rgb(242, 246, 253);
     padding: 150px 0px;
     margin: 55px 0px;
     display: grid;
@@ -459,6 +456,7 @@ body{
 .flex-form input, textarea{
     width: 100%;
     font-family: inherit;
+    font-size: 1rem;
     border: none;
     background-color: rgba(223, 226, 255, 0.562);
     margin: 5px 0px;
@@ -473,7 +471,7 @@ body{
     background-image: linear-gradient(to bottom right, #8d10be 5%, var(--detailColor) 60%);
     width: min-content;
     padding: 15px 30px;
-    color: white;
+    color: #fff;
     font-family: inherit;
     font-weight: 900;
     letter-spacing: 2px;
@@ -495,7 +493,7 @@ body{
 }
 
 .footer__link{
-    color: black;
+    color: var(--subtextColor);
     margin: 0px 15px;
     font-size: 2rem;
     width: 25px;

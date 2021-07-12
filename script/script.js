@@ -1,3 +1,12 @@
+//**** Navbar Responsive ****//
+const btnNav = document.querySelector(".navbar__button");
+const navtoggle = document.querySelector(".navbar__list-items");
+btnNav.addEventListener("click",()=>{
+    
+    navtoggle.classList.toggle("list-active");
+});
+//**** Navbar Responsive End****//
+
 //****Biography navigation ****//
 const btnBack = document.querySelector("#bio__btn-back");
 const btnFwd = document.querySelector("#bio__btn-fwd");
@@ -128,7 +137,6 @@ projects.addEventListener("click", openModal = function(e){
     });
     
 });
-
 //****Projects Modal End****//
 
 //****Intersection Observers****//
@@ -152,8 +160,6 @@ const navScroll = new IntersectionObserver(function(entries,navScroll){
                 }
             });
         }
-        // }
-        // 
     });
 },navOptions);
 sections.forEach(section=>{
@@ -190,10 +196,3 @@ fadeLeft.forEach(fader =>{
 
 //****Intersection Observers End****//
 
-//**** Navbar Responsive ****//
-const btnNav = document.querySelector(".navbar__button");
-const navtoggle = document.querySelector(".navbar__list-items");
-btnNav.addEventListener("click",()=>{
-    
-    navtoggle.classList.toggle("list-active");
-});
