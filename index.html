@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
-    <title>Gus Romero Front-End</title>
+    <title>Gus Creations</title>
 </head>
 <body>
 	<header id="Home" class="header section">
@@ -182,9 +182,12 @@
 	<section id="Contact" class="grid-section-contact section">
 		<h2 class="subtitle fade-left" >Lets Talk</h2>
 		<form class="flex-form card fade-bot">
-			<input type="text" id="name" placeholder="Your Name">
-			<input type="email" id="mail" placeholder="Your e-mail">
-			<textarea id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+			<input type="text" id="name" placeholder="Your Name" required>
+			<span class="input-error">please, insert a valid name.</span>
+			<input type="email" id="mail" placeholder="Your e-mail" required>
+			<span class="input-error">please, insert a valid e-mail.</span>
+			<textarea id="msg" cols="30" rows="10" placeholder="Your Message" required></textarea>
+			<span class="input-error">please, insert your message.</span>
 			<input type="submit" value="SUBMIT">
 		</form>
 	</section>

@@ -196,3 +196,41 @@ fadeLeft.forEach(fader =>{
 
 //****Intersection Observers End****//
 
+//****Form Validation ****/
+const formValidation = ()=>{
+    const name = document.querySelector("#name");
+    const email = document.querySelector("#mail");
+    const text = document.querySelector("#msg");
+    
+    if (name.value.length < 3 || name.value.length > 25){
+        name.nextElementSibling.classList.add("visible");
+        return false;
+    }else {
+        name.nextElementSibling.classList.remove("visible");
+    };
+
+    if (email.value.length < 3 || name.value.length > 50 || email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
+        email.nextElementSibling.classList.add("visible");
+        return false;
+    }else {
+        email.nextElementSibling.classList.remove("visible");
+    };
+    if (text.value.length < 3){
+        text.nextElementSibling.classList.add("visible");
+        return false;
+    }else {
+        text.nextElementSibling.classList.remove("visible");
+    };
+};
+
+
+const bsubmit = document.querySelector("input[type=submit]");
+bsubmit.addEventListener("click", (e)=>{
+    e.preventDefault();
+    formValidation();
+    if(formValidation() == false){
+        alert("no se pudo enviar el msj");
+    }else{
+        alert("mensaje enviado con exito");
+    }
+});
