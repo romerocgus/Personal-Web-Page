@@ -205,14 +205,14 @@ const message = document.querySelector("#msg");
 const success = document.querySelector(".submit-success");
 
 const formValidation = ()=>{
-    if (namef.value.length < 3 || name.value.length > 25){
+    if (namef.value.length < 3 || namef.value.length > 25){
         namef.nextElementSibling.classList.add("visible");
         return false;
     }else {
         namef.nextElementSibling.classList.remove("visible");
     };
 
-    if (email.value.length < 3 || name.value.length > 50 || email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
+    if (email.value.length < 3 || email.value.length > 50 || email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
         email.nextElementSibling.classList.add("visible");
         return false;
     }else {
