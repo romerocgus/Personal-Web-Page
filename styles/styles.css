@@ -499,15 +499,18 @@ body{
     color: #ff0000;
     display: none;
 }
-.submit-success{
+.submit-response{
     font-style: 1.2rem;
-    color: green;
+    color: #008000;
     align-self: center;
     margin: 15px 0px;
     display: none;
 }
 .visible{
     display: block;
+}
+.sendFail{
+    color: #ff0000;
 }
 /* CONTACT FORM END */
 

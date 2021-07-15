@@ -202,7 +202,7 @@ const form = document.querySelector(".flex-form");
 const namef = document.querySelector("#name");
 const email = document.querySelector("#mail");
 const message = document.querySelector("#msg");
-const success = document.querySelector(".submit-success");
+const formResponse = document.querySelector(".submit-response");
 
 const formValidation = ()=>{
     if (namef.value.length < 3 || namef.value.length > 25){
@@ -231,8 +231,11 @@ const bsubmit = document.querySelector("input[type=submit]");
 bsubmit.addEventListener("click", (e)=>{
     e.preventDefault();
     formValidation();
+    let text;
     if(formValidation() == false){
-        alert("no se pudo enviar el msj");
+        text = "Please, make sure your message is ok";
+        formResponse.innerHTML= text;
+        formResponse.classList.add("visible", "sendFail");
     }else{
         fetch("https://formsubmit.co/ajax/info@guscreations.net",{
             method: "POST",
@@ -242,15 +245,23 @@ bsubmit.addEventListener("click", (e)=>{
             },
             body: JSON.stringify({
                 name: "FormSubmit",
-                message: `name: ${namef.value}, email: ${email.value}, message: ${message.value}`
+                message: `Name: ${namef.value}
+                Email: ${email.value}
+                Message: ${message.value}`
             })
         })
         .then(response => response.json())
         .then(json => {
-            console.log(json);
-            success.classList.add("visible");
+            text = `<i class="far fa-check-circle"></i> Your e-mail was sent, thank you for your message!`;
+            formResponse.innerHTML= text;
+            formResponse.classList.remove("sendFail");
+            formResponse.classList.add("visible");
             form.reset();
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+            text = "There was an error, please try again later.";
+            formResponse.innerHTML= text;
+            formResponse.classList.add("visible", "sendFail");
+        });
     }
 });
