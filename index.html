@@ -13,8 +13,8 @@
 			<h1 class="header__title">Hi, Welcome!</h1>
 			<span class="header__firstlane">I'm Gus, front-end developer. Let's make something awesome!</span>
 			<p class="header__text">im really passionate about creating great and beautiful UIs & givin people the best experiences! feel free to check out my Bio and some of my projects, also leave me a message if you like what i do and want to work together.</p>
-			<a href="#About">
-				<i class="header__arrow far fa-arrow-alt-circle-down"></i>
+			<a class="header__link" href="#About">
+				<i class="fas fa-chevron-down"></i>
 			</a>
 	</header>
 	<nav class="navbar">
@@ -128,7 +128,7 @@
 	<section id="Projects" class="grid-section-project section">
 		<h2 class="subtitle fade-right" >My Projects</h2>
 		<div class="grid-projects card fade-bot">
-			<figure class="grid-projects__item grid-projects__long">
+			<figure class="grid-projects__item grid-projects__long" tabindex="0">
 				<img class="grid-projects__img" src="images/webpage.jpg" alt="image">
 				<figcaption class="grid-projects__caption">
 					<h3 class="project-title">Personal Page</h3>
@@ -140,7 +140,7 @@
 					<a class="modal__link" href="www.youtube.com" target="_blank">See more</a>
 				</div>
 			</figure>
-			<figure class="grid-projects__item grid-projects__tall">
+			<figure class="grid-projects__item grid-projects__tall" tabindex="0">
 				<img class="grid-projects__img" src="images/pelicula-de-harry-potter-and-the-cursed-child1.jpg" alt="">
 				<figcaption class="grid-projects__caption">
 					<h3 class="project-title">Project Two</h3>
@@ -152,7 +152,7 @@
 					<a class="modal__link" href="#" target="_blank">See more</a>
 				</div>
 			</figure>
-			<figure class="grid-projects__item grid-projects__med">
+			<figure class="grid-projects__item grid-projects__med"tabindex="0">
 				<img class="grid-projects__img" src="images/pelicula-de-harry-potter-and-the-cursed-child1.jpg" alt="">
 				<figcaption class="grid-projects__caption">
 					<h3 class="project-title">Project Three</h3>
@@ -164,7 +164,7 @@
 					<a class="modal__link" href="#" target="_blank">See more</a>
 				</div>
 			</figure>
-			<figure class="grid-projects__item grid-projects__med">
+			<figure class="grid-projects__item grid-projects__med"tabindex="0">
 				<img class="grid-projects__img" src="images/pelicula-de-harry-potter-and-the-cursed-child1.jpg" alt="">
 				<figcaption class="grid-projects__caption">
 					<h3 class="project-title">Project Four</h3>
@@ -176,19 +176,18 @@
 					<a class="modal__link" href="#" target="_blank">See more</a>
 				</div>
 			</figure>
-			
 		</div>
 	</section>
 	<section id="Contact" class="grid-section-contact section">
 		<h2 class="subtitle fade-left" >Lets Talk</h2>
 		<form class="flex-form card fade-bot">
-			<input type="text" name="name" id="name" placeholder="Your Name" required>
+			<input type="text" name="name" class="form__input" id="name" placeholder="Your Name" required>
 			<span class="input-error">please, insert a valid name. Must have at least 3 characters</span>
-			<input type="email" name="email"id="mail" placeholder="Your e-mail" required>
+			<input type="email" name="email" class="form__input" id="mail" placeholder="Your e-mail" required>
 			<span class="input-error">please, insert a valid e-mail.</span>
-			<textarea id="msg" name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+			<textarea id="msg" name="message" class="form__input" cols="30" rows="10" placeholder="Your Message" required></textarea>
 			<span class="input-error">please, insert your message.</span>
-			<input type="submit" value="SUBMIT">
+			<input type="submit" class="form__button" value="SUBMIT">
 			<span class="submit-response"><i class="far fa-check-circle"></i> Your e-mail was sent, thank you for your message!</span>
 		</form>
 	</section>

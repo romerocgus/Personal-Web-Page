@@ -5,7 +5,7 @@ btnNav.addEventListener("click",()=>{
     
     navtoggle.classList.toggle("list-active");
 });
-//**** Navbar Responsive End****//
+//**** Navbar Responsive END****//
 
 //****Biography navigation ****//
 const btnBack = document.querySelector("#bio__btn-back");
@@ -90,39 +90,11 @@ let softSkillTextAsign = ()=>{
             softText.innerHTML = newText;
         });
     });
-    // for (i = 0; i< softSkills.length; i++){
-    //     let newText = "";
-    //     if(i == 0){
-    //         newText = "el texto de tw";
-    //     }else if(i == 1){
-    //         newText = "el texto de fast";
-    //     }else if(i == 2){
-    //         newText = "el texto de nice";
-    //     }else if(i == 3){
-    //         newText = "el texto de positive";
-    //     }else if(i == 4){
-    //         newText = "el texto de funny";
-    //     }else if(i == 5){
-    //         newText = "el texto de vsCode";
-    //     }else if(i == 6){
-    //         newText = "el texto de bootstrap";
-    //     }else if(i == 7){
-    //         newText = "el texto de photoshop";
-    //     }else if(i == 8){
-    //         newText = "el texto de illustrator";
-    //     };
-
-    //     softSkills[i].addEventListener("click", ()=>{
-    //         softText.innerHTML = newText;
-    //     });
-    // };
 };
 softSkillTextAsign();
-//****Soft Skills Text End****//
+//****Soft Skills Text END****//
 
 //****Projects Modal ****//
-
-
 const projects = document.querySelector(".grid-projects");
 
 projects.addEventListener("click", openModal = function(e){
@@ -137,7 +109,7 @@ projects.addEventListener("click", openModal = function(e){
     });
     
 });
-//****Projects Modal End****//
+//****Projects Modal END****//
 
 //****Intersection Observers****//
 // Nav //
@@ -153,10 +125,10 @@ const navScroll = new IntersectionObserver(function(entries,navScroll){
         if(entry.isIntersecting){
             navItem.forEach(item=>{
                 if(entry.target.id == item.innerHTML){
-                    item.parentNode.classList.add("active");
+                    item.classList.add("active");
                     window.history.pushState("", "", `#${entry.target.id}`);
                 }else{
-                    item.parentNode.classList.remove("active");
+                    item.classList.remove("active");
                 }
             });
         }
@@ -194,7 +166,7 @@ fadeLeft.forEach(fader =>{
     appearOnScroll.observe(fader);
 });
 
-//****Intersection Observers End****//
+//****Intersection Observers END****//
 
 //****Form Validation ****/
 
@@ -225,8 +197,9 @@ const formValidation = ()=>{
         message.nextElementSibling.classList.remove("visible");
     };
 };
+//****Form Validation END ****/
 
-
+//****Email Send ****/
 const bsubmit = document.querySelector("input[type=submit]");
 bsubmit.addEventListener("click", (e)=>{
     e.preventDefault();
@@ -265,3 +238,4 @@ bsubmit.addEventListener("click", (e)=>{
         });
     }
 });
+//****Email Send END****/
