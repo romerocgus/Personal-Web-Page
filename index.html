@@ -182,13 +182,14 @@
 	<section id="Contact" class="grid-section-contact section">
 		<h2 class="subtitle fade-left" >Lets Talk</h2>
 		<form class="flex-form card fade-bot">
-			<input type="text" id="name" placeholder="Your Name" required>
+			<input type="text" name="name" id="name" placeholder="Your Name" required>
 			<span class="input-error">please, insert a valid name.</span>
-			<input type="email" id="mail" placeholder="Your e-mail" required>
+			<input type="email" name="email"id="mail" placeholder="Your e-mail" required>
 			<span class="input-error">please, insert a valid e-mail.</span>
-			<textarea id="msg" cols="30" rows="10" placeholder="Your Message" required></textarea>
+			<textarea id="msg" name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
 			<span class="input-error">please, insert your message.</span>
 			<input type="submit" value="SUBMIT">
+			<span class="submit-success"><i class="far fa-check-circle"></i> Your e-mail was sent, thank you for your message!</span>
 		</form>
 	</section>
 	<footer id="footer" class="flex-footer">

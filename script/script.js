@@ -197,16 +197,19 @@ fadeLeft.forEach(fader =>{
 //****Intersection Observers End****//
 
 //****Form Validation ****/
+
+const form = document.querySelector(".flex-form");
+const namef = document.querySelector("#name");
+const email = document.querySelector("#mail");
+const message = document.querySelector("#msg");
+const success = document.querySelector(".submit-success");
+
 const formValidation = ()=>{
-    const name = document.querySelector("#name");
-    const email = document.querySelector("#mail");
-    const text = document.querySelector("#msg");
-    
-    if (name.value.length < 3 || name.value.length > 25){
-        name.nextElementSibling.classList.add("visible");
+    if (namef.value.length < 3 || name.value.length > 25){
+        namef.nextElementSibling.classList.add("visible");
         return false;
     }else {
-        name.nextElementSibling.classList.remove("visible");
+        namef.nextElementSibling.classList.remove("visible");
     };
 
     if (email.value.length < 3 || name.value.length > 50 || email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
@@ -215,11 +218,11 @@ const formValidation = ()=>{
     }else {
         email.nextElementSibling.classList.remove("visible");
     };
-    if (text.value.length < 3){
-        text.nextElementSibling.classList.add("visible");
+    if (message.value.length < 3){
+        message.nextElementSibling.classList.add("visible");
         return false;
     }else {
-        text.nextElementSibling.classList.remove("visible");
+        message.nextElementSibling.classList.remove("visible");
     };
 };
 
@@ -231,6 +234,23 @@ bsubmit.addEventListener("click", (e)=>{
     if(formValidation() == false){
         alert("no se pudo enviar el msj");
     }else{
-        alert("mensaje enviado con exito");
+        fetch("https://formsubmit.co/ajax/info@guscreations.net",{
+            method: "POST",
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: "FormSubmit",
+                message: `name: ${namef.value}, email: ${email.value}, message: ${message.value}`
+            })
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            success.classList.add("visible");
+            form.reset();
+        })
+        .catch(error => console.log(error));
     }
 });
