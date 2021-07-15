@@ -500,11 +500,11 @@ body{
     resize: none;
 }
 .form__button{
-    background-color: lightgray;
+    background-image: linear-gradient(to bottom right, #8d10be 5%, var(--detailColor) 60%);
     width: min-content;
     margin: 15px 0px;
     padding: 15px 30px;
-    color: var(--subtextColor);
+    color: #fff;
     font-family: inherit;
     font-weight: 900;
     letter-spacing: 2px;
@@ -534,12 +534,12 @@ body{
 .form__input:focus{
     box-shadow: 0px 0px 0px 2px var(--detailColor);
 }
-
-.form__button:focus, .form__button:hover{
-    background-image: linear-gradient(to bottom right, #8d10be 5%, var(--detailColor) 60%);
-    color: #fff;
+.form__button:focus{
+    box-shadow: 0px 0px 0px 2px white,
+    0px 0px 0px 4px blue;
+}
+.form__button:hover{
     cursor: pointer;
-    
 }
 /* CONTACT FORM END */
 
