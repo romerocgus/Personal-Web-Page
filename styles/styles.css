@@ -216,16 +216,29 @@ body{
 .content-header__title{
     font-size: 2rem;
     line-height: 2.3rem;
-    margin: 20px 0px;
+    margin-bottom: 20px;
 }
 .content-header__text{
     color: var(--subtextColor);
     font-size: 1.5rem;
     line-height: 2rem;
-    margin: 20px 0px;
+    margin-bottom: 20px;
 }
 .bio__text{
     color: var(--subtextColor);
+    font-size: 1.2rem;
+}
+.bio__location{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 15px 0px;
+}
+.location-img{
+    width: 40px;
+    margin-left: -15px;
+}
+.location-text{
     font-size: 1.2rem;
 }
 .bio__nav{
@@ -638,12 +651,21 @@ body{
         flex-direction: column;
         align-items: center;
     }
+    .content-header__text{
+        text-align: center;
+    }
+    .bio__text{
+        text-align: center;
+    }
     .bio__content-img{
         flex-shrink: 0.5;
         min-width: 350px;
     }
     .content-header__title{
         margin-top: 20px;
+    }
+    .bio__location{
+        justify-content: center;
     }
     .flex-about__skills{
         grid-column: span 4;
