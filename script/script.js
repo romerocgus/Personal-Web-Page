@@ -1,10 +1,17 @@
 //**** Navbar Responsive ****//
 const btnNav = document.querySelector(".navbar__button");
 const navtoggle = document.querySelector(".navbar__list-items");
+
+document.addEventListener("click", (e)=>{
+    if(e.target !== navtoggle && e.target !== btnNav){
+        navtoggle.classList.remove("list-active");
+    }
+});
 btnNav.addEventListener("click",()=>{
-    
     navtoggle.classList.toggle("list-active");
 });
+
+
 //**** Navbar Responsive END****//
 
 //****Biography navigation ****//
@@ -16,7 +23,7 @@ const bioText = document.querySelector(".bio__text");
 let bioTextMaker = ()=>{
     let texto1 = `I started my career with the dream of give to the world the most unique experiences in every project that i contribute to make. I really enjoy develop, design and experiment with <span class="colors">colors</span>, <span class="fonts">fonts</span>, <span class="anime">animations</span> and every component that makes a difference to give me the posibility of bring to life UIs that people will love to use!`;
     let texto2 = `I'm naturally curious, love to learn new skills and create awesome projects where i can share innovative (or crazy) ideas and put them into action. I'm constantly challenging myself to improve, looking for creative solutions in every aspect of my life.`;
-    let texto3 = `Well... That's a little bit of me, now i like to know more about you. If you want to talk, being for work, some insight, cool ideas or whatever, please send me a message in my <a class="contact-link" href="#contact">contact section</a> or <a class="contact-link" href="#footer">follow me</a> and we'll be friends!. i'll love to read what you have to say.<br>
+    let texto3 = `Well... That's a little bit of me, now i like to know more about you. If you want to talk, being for work, some insight, cool ideas or whatever, please send me a message in my <a class="contact-link" href="#Contact">contact section</a> or <a class="contact-link" href="#footer">follow me</a> and we'll be friends!. i'll love to read what you have to say.<br>
     Hope you enjoy my site as much as i did making it!<br>
     Gus`;
     let arrayText= [texto1,texto2,texto3];
