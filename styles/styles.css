@@ -143,7 +143,7 @@ body{
 .navbar__link{
     display: block;
     color: var(--textColor);
-    font-size: 1.5rem;
+    font-size: 24px;
     text-decoration: none;
     border-radius: 5px;
 }
@@ -206,7 +206,7 @@ body{
     content: "";
     position: absolute;
     left: 0px;
-    top: calc(100% + 9.5px);
+    top: calc(100% + 8px);
     width: 100%;
     height: 3.5px;
     background-color: var(--detailColor);
@@ -759,6 +759,23 @@ body{
     }
     .list-active{
         transform: translateX(0);
+    }
+    .navbar__item{
+        width: 100%;
+    }
+    .navbar__item:hover a{
+        background-color: rgba(77, 126, 210, 0.719);
+        border-radius: 0px;
+        color: white;
+    }
+    .active{
+        width: 100%;
+        border-radius: 0px;
+        background-color: rgba(223, 226, 255, 0.562);
+        color: var(--detailColor);
+    }
+    .active::before{
+        content: none;
     }
 /* navbar responsive end  */
 
