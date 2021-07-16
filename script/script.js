@@ -15,7 +15,6 @@ btnNav.addEventListener("click",()=>{
     btnNav.classList.toggle("cross");
 });
 
-
 //**** Navbar Responsive END****//
 
 //****Biography navigation ****//
@@ -188,7 +187,7 @@ const message = document.querySelector("#msg");
 const formResponse = document.querySelector(".submit-response");
 
 const formValidation = ()=>{
-    if (namef.value.length < 3 || namef.value.length > 25){
+    if (namef.value.length < 3 || namef.value.length > 50){
         namef.nextElementSibling.classList.add("visible");
         return false;
     }else {
