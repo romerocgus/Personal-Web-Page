@@ -1,14 +1,18 @@
 //**** Navbar Responsive ****//
 const btnNav = document.querySelector(".navbar__button");
+const btnNavlines = document.querySelector(".btnLine");
 const navtoggle = document.querySelector(".navbar__list-items");
 
 document.addEventListener("click", (e)=>{
+    console.log(e.target);
     if(e.target !== navtoggle && e.target !== btnNav){
         navtoggle.classList.remove("list-active");
+        btnNav.classList.remove("cross");
     }
 });
 btnNav.addEventListener("click",()=>{
     navtoggle.classList.toggle("list-active");
+    btnNav.classList.toggle("cross");
 });
 
 
