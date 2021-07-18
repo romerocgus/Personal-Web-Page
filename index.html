@@ -9,6 +9,7 @@
     <title>Gus Creations</title>
 </head>
 <body>
+	<!-- Header start -->
 	<header id="Home" class="header section">
 			<h1 class="header__title">Hi, Welcome!</h1>
 			<span class="header__firstlane">My name is Gus and i'm a front-end developer. Let's make something awesome!</span>
@@ -17,6 +18,7 @@
 				<i class="fas fa-chevron-down"></i>
 			</a>
 	</header>
+	<!-- Navbar Start -->
 	<nav class="navbar">
 		<div class="navbar__button">
 		</div>
@@ -26,11 +28,11 @@
 			<li class="navbar__item"><a href="#Projects" class="navbar__link">Projects</a></li>
 			<li class="navbar__item"><a href="#Contact" class="navbar__link">Contact</a></li>
 		</ul>
-		
 	</nav>
-	<!-- main start -->
+	<!-- Main start -->
 	<main id="About" class="grid-about section">
 		<h2 class="subtitle fade-left">About me</h2>
+		<!-- about start -->
 		<div class="grid-about__bio card fade-bot">
 			<div class="bio__content">
 				<img class="bio__content-img" src="images/foto castell chiquita.jpg" alt="Picture">
@@ -46,14 +48,17 @@
 				<div id="bio__btn-back" class="bio__nav-btn" tabindex="0">
 					<i class="fas fa-chevron-left"></i>
 				</div>
-				<div class="bio__nav-dot"></div>
-				<div class="bio__nav-dot"></div>
-				<div class="bio__nav-dot"></div>
+				<div class="bio__nav-dots">
+					<div id="dot1" class="bio__nav-dot"></div>
+					<div id="dot2" class="bio__nav-dot"></div>
+					<div id="dot3" class="bio__nav-dot"></div>
+				</div>
 				<div id="bio__btn-fwd" class="bio__nav-btn" tabindex="0">
 					<i class="fas fa-chevron-right"></i>
 				</div>
 			</div>
 		</div>
+		<!-- Skills Start -->
 		<div class="flex-about__skills card fade-left">
 			<h3 class="skills__title card__title">Technologies i use</h3>
 			<div class="skills-container">
@@ -95,6 +100,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- SoftSkills Start -->
 		<div class="flex-about__skillSoft card fade-right">
 			<h3 class="skills__title card__title">Soft Skills</h3>
 			<div class="skills-container">
@@ -126,6 +132,7 @@
 			<p class="softSkills__text"></p>
 		</div>
 	</main>
+	<!-- Project Section Start -->
 	<section id="Projects" class="grid-section-project section">
 		<h2 class="subtitle fade-right" >My Projects</h2>
 		<div class="grid-projects card fade-bot">
@@ -179,6 +186,7 @@
 			</figure>
 		</div>
 	</section>
+	<!-- Contact Section Start -->
 	<section id="Contact" class="grid-section-contact section">
 		<h2 class="subtitle fade-left" >Lets Talk</h2>
 		<form class="flex-form card fade-bot">
@@ -192,14 +200,13 @@
 			<span class="submit-response"><i class="far fa-check-circle"></i> Your e-mail was sent, thank you for your message!</span>
 		</form>
 	</section>
+	<!-- Footer Start -->
 	<footer id="footer" class="flex-footer">
 		<div class="footer__links">
 			<a class="footer__link" href="https://www.linkedin.com/in/gustavo-ezequiel-romero-ab0b171b2/" target="_blank"><i class="fab fa-linkedin"></i></a>
 			<a class="footer__link" href="https://www.instagram.com/romeroc.gus/" target="_blank"><i class="fab fa-instagram"></i></a>
 			<a class="footer__link" href="https://www.facebook.com/gus.romeroc/" target="_blank"><i class="fab fa-facebook-square"></i></a>
 			<a class="footer__link" href="https://github.com/romerocgus" target="_blank"><i class="fab fa-github-square"></i></a>
-			
-
 		</div>
 		<p class="footer__text">Gustavo Ezequiel Romero Cañas <span class="footer__copyright">© 2020</span></p>
 	</footer>

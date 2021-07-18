@@ -1,10 +1,8 @@
 //**** Navbar Responsive ****//
 const btnNav = document.querySelector(".navbar__button");
-const btnNavlines = document.querySelector(".btnLine");
 const navtoggle = document.querySelector(".navbar__list-items");
 
 document.addEventListener("click", (e)=>{
-    console.log(e.target);
     if(e.target !== navtoggle && e.target !== btnNav){
         navtoggle.classList.remove("list-active");
         btnNav.classList.remove("cross");
@@ -33,7 +31,27 @@ let bioTextMaker = ()=>{
     let arrayPos = 0;
     bioDots[0].classList.add("dot-active");
     bioText.innerHTML = arrayText[0];
-
+    bioDots.forEach(dot =>{
+        dot.addEventListener("click", (e)=>{
+            let siblings = e.target.parentNode.children;
+            for(sib of siblings){
+                sib.classList.remove("dot-active");
+            }
+            if(e.target.id == "dot1"){
+                bioText.innerHTML = arrayText[0];
+                e.target.classList.add("dot-active");
+                arrayPos = 0;
+            }else if(e.target.id == "dot2"){
+                bioText.innerHTML = arrayText[1];
+                e.target.classList.add("dot-active");
+                arrayPos = 1;
+            } else if(e.target.id == "dot3"){
+                bioText.innerHTML = arrayText[2];
+                e.target.classList.add("dot-active");
+                arrayPos = 2;
+            }
+        })
+    });
     btnFwd.addEventListener("click",()=>{
         if (arrayPos == 0){
             bioText.innerHTML = arrayText[1];
@@ -70,7 +88,7 @@ let bioTextMaker = ()=>{
             arrayPos--;
         }
     });
-
+    
 }
 bioTextMaker();
 //****Biography navigation END****//
