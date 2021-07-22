@@ -110,8 +110,8 @@ let softSkillTextAsign = ()=>{
             newText = "Positive:<br>I like to see the bright side of thing, if there is bad moments i try to cheer things up to raise the moral of the team."
         } else if(softSkill.firstElementChild.innerHTML == "Creative"){
             newText = "Creative:<br>If there's something about this job that i like the most is that we can make reality our dreams!. I like to try different ways to make things happen, and bring creative solutions or ideas to play with."
-        } else if(softSkill.firstElementChild.innerHTML == "Meticulous"){
-            newText = "Meticulous:<br>I have so much attention for details. I have no problem to do and re-do things in order to make them look the way you like or improve my code to make things more legible, more efficient, prettier."
+        } else if(softSkill.firstElementChild.innerHTML == "Detail Oriented"){
+            newText = "Detail Oriented:<br>I have so much attention for details. I have no problem to do and re-do things in order to make them look the way you like or improve my code to make things more legible, more efficient, prettier."
         }
 
         softSkill.addEventListener("click", ()=>{
@@ -126,12 +126,12 @@ softSkillTextAsign();
 const projects = document.querySelector(".grid-projects");
 
 projects.addEventListener("click", openModal = function(e){
-    const modalOpener = e.target.closest(".project-title");
+    const modalOpener = e.target.closest(".grid-projects__item");
     if(!modalOpener) return;
-    const modal = modalOpener.parentNode.nextElementSibling;
-    const closeButton = modal.querySelector(".modal-close");
+    const modal = modalOpener.nextElementSibling;
     modal.classList.add("open");
 
+    const closeButton = modal.querySelector(".modal-close");
     closeButton.addEventListener("click", _ =>{
         modal.classList.remove("open");
     });
